@@ -1,0 +1,28 @@
+{
+  "name": "laravel-vue-i18n-lang-resolver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpietrucha/laravel-vue-i18n-lang-resolver.git"
+  },
+  "keywords": [
+    "laravel-vue-i18n",
+    "inertia",
+    "vue",
+    "resolver"
+  ],
+  "author": "Michał Pietrucha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpietrucha/laravel-vue-i18n-lang-resolver/issues"
+  },
+  "homepage": "https://github.com/mpietrucha/laravel-vue-i18n-lang-resolver#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
