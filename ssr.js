@@ -1,3 +1,5 @@
+import { response, isResolvingPhpFile } from './utils'
+
 export default lang => response(lang, lang => {
     if (! isResolvingPhpFile(lang)) {
         return

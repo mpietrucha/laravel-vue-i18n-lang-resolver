@@ -1,16 +1,14 @@
-import { pickBy } from 'lodash'
-
-const isResolvingPhpFile = lang => lang.includes('php_')
-
-const response = (lang, resolve) => pickBy({ lang, resolve }, value => value !== undefined)
+import { response, isResolvingPhpFile, buildPath } from './utils'
 
 export default async lang => {
     const resolved = []
 
     const langs = import.meta.glob('/lang/*.json')
 
-    if (lang) {
-        resolved[`/lang/php_${lang}.json`] = await langs[`/lang/php_${lang}.json`]()
+    const path = buildPath(lang)
+
+    if (lang && ! resolved[path]) {
+        resolved[path] = await langs[path]()
     }
 
     return response(lang, async lang => {
@@ -18,6 +16,8 @@ export default async lang => {
             return
         }
 
-        return resolved[`/lang/${lang}.json`] || await langs[`/lang/${lang}.json`]()
+        const path = buildPath(lang)
+
+        return resolved[path] || await langs[path]()
     })
 }
